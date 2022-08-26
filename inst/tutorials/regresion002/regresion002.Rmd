@@ -1,0 +1,91 @@
+---
+title: "Modelo de Regresión Lineal Múltiple"
+author: David Arango - Daniel E. Gonzalez 
+output: 
+  learnr::tutorial:
+    css: css/learnr_metadocencia.css
+    progressive: true # los encabezados de tercer nivel (###) son revelados progresivamente     allow_skip: true # permite saltearse los ejercicios. 
+    language:
+      es: tutorial_es.json
+description: "Tutorial interactivo - unidad 0.1" # Esta descripción se ve en el panel Tutorial de RStudio 
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                 exercise.warn_invisible = FALSE)
+# colores
+# colores
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f" 
+```
+
+## Presentación 
+
+```{r, echo=FALSE, out.width="100%", fig.align = "center", warning=FALSE, message=FALSE}
+knitr::include_graphics("images/banner3.png")
+```
+
+
+#### Recomendaciones :
+
++ Lea el enunciado del problema planteado
++ Determina la estructura del modelo a estimar 
++ Use el software estadístico $R$ para resolver lo solicitado
++ Se requiere la instalación del paquete de R : `lmtest` para la verificación de los supuestos de varianza constante y no autocorrelación de los errores
++ Utilice la funciones:
+    + `plot` :diagrama de dispersión                
+    + `lm`   : estimación del modelo por MCO         
+    + `shapiro.test` : prueba de normalidad                    
+    + `lmtest::bptest` : prueba de varianza constante          
+    + `lmtest::dwtest` : prueba de no autocorrelación   
+    + 
+    +  `predict` : predicción     
+
+
+<br/>
+
+#### Nota  
+
+Cada ejercicio cuenta su respuesta para servir de refente para el desarrollo de las actividades planteadas 
+
+
+## Problema 1
+
+Se realizó un experimento en un supermercado para observar la relación entre la cantidad de espacio para la exhibición asignado a una marca de café (A) y sus ventas semanales. Se distribuyó de manera aleatoria,  durante un periodo de 12 semanas,  la cantidad de espacio  disponible para exhibición en 3, 6 y 9 $ft^2$ respectivamente. Los datos obtenidos fueron los siguientes (Espacio Asignado = X, Ventas Semnales =Y):
+
+</br>
+
+`espacio <- c(6, 3, 6, 9, 3, 9, 6, 3, 9, 6, 3, 9)`
+`ventas <- c(526, 421, 581, 630, 412, 560, 434, 443, 590, 570, 346, 672)`
+
+</br>
+
+
+
+</br></br>
+
+##### 1. Cosnstruya dispersión de los datos.
+
+```{r p11, exercise=TRUE, exercise.lines = 15}
+
+```
+
+
+```{r p11-hint}
+espacio <- c(6, 3, 6, 9, 3, 9, 6, 3, 9, 6, 3, 9)
+ventas <- c(526, 421, 581, 630, 412, 560, 434, 443, 590, 570, 346, 672)
+plot(espacio,ventas,  # variables
+     xlab="Espacio asignado", # etiqueta de las x
+     ylab="Ventas semanales", # etiqueta de las y
+     las=1,     # coloca etiquetes del eje y horizontal
+     pch=19,    # puntos rellenos
+     col="blue") # color de los puntos
+```
+
+</br></br>
